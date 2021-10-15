@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ECF3D6"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -14,41 +15,51 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="335dp"
-            android:orientation= "vertical">
+            android:layout_marginBottom="2dp"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/splash_img" />
+                android:src="@drawable/splash_img"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/detail_tv"
-                android:contextClickable="true"
-                android:elevation="2dp"
-                app:cardCornerRadius="8dp"
                 android:layout_width="275dp"
                 android:layout_height="75dp"
-                app:cardBackgroundColor="@color/black"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shadow_background_1"
+                android:contextClickable="true"
+                android:elevation="8dp"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:text="My Tour Guide App"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            </com.google.android.material.card.MaterialCardView>
 
         </RelativeLayout>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
