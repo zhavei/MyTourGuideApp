@@ -2,26 +2,42 @@ package com.example.mytourguideapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<DataModelGunung> gunungList = MockData.getGunungList();
-    private List<DataModelGunung> gunungListDisplay = new ArrayList<>();
-    private GunungListAdapter adapter;
+    CategoryAdapter categoryAdapter;
+    TabLayout tabLayout;
+    ViewPager2 viewPager2;
+    private String[] titles = new String[]{"Numbers", "Colors", "Family", "Phrases"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().hide();
+        viewPager2 = findViewById(R.id.view_pager);
+        tabLayout = findViewById(R.id.tab_layout);
+        categoryAdapter = new CategoryAdapter(this);
+
+        viewPager2.setAdapter(categoryAdapter);
+        new TabLayoutMediator(tabLayout, viewPager2,((tab, position) -> tab.setText(titles[position]))).attach();
 
 
     }
