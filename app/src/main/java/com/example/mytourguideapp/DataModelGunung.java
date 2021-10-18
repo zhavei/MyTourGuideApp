@@ -3,7 +3,7 @@ package com.example.mytourguideapp;
 public class DataModelGunung {
 
     private String namaGunung;
-    private String imageUrl;
+    private int imageUrl;
     private String tinggiGungung;
     private String deskripsiGunung;
 
@@ -15,11 +15,11 @@ public class DataModelGunung {
         this.namaGunung = namaGunung;
     }
 
-    public String getImageUrl() {
+    public int getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    public void setImageUrl(int imageUrl) {
         this.imageUrl = imageUrl;
     }
 

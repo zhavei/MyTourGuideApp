@@ -11,19 +11,19 @@ public class MockData {
         DataModelGunung gunungRinjani = new DataModelGunung();
         gunungRinjani.setNamaGunung("gunung rinjani");
         gunungRinjani.setTinggiGungung("175mdpl");
-        gunungRinjani.setImageUrl("https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI");
+        gunungRinjani.setImageUrl(R.drawable.ic_launcher_background);
         gunungRinjani.setDeskripsiGunung("Pulau Lombok di Nusa Tenggara Barat tidak hanya memiliki keindahan pantai eksotis ");
 
         DataModelGunung gunungijen = new DataModelGunung();
         gunungijen.setNamaGunung("gunung ijen");
         gunungijen.setTinggiGungung("175mdpl");
-        gunungijen.setImageUrl("https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI");
+        gunungijen.setImageUrl(R.drawable.ic_launcher_foreground);
         gunungijen.setDeskripsiGunung("Pulau Lombok di Nusa Tenggara Barat tidak hanya memiliki keindahan pantai eksotis ");
 
         DataModelGunung gunungPapua = new DataModelGunung();
         gunungPapua.setNamaGunung("gunung papua");
         gunungPapua.setTinggiGungung("175mdpl");
-        gunungPapua.setImageUrl("https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI");
+        gunungPapua.setImageUrl(R.drawable.ic_launcher_background);
         gunungPapua.setDeskripsiGunung("Pulau Lombok di Nusa Tenggara Barat tidak hanya memiliki keindahan pantai eksotis ");
 
         gunungList.add(gunungijen);
