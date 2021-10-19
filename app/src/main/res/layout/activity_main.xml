@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECF3D6"
+    android:background="@drawable/splash_img"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -21,8 +21,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/splash_img"/>
+                android:scaleType="centerCrop" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/detail_tv"
@@ -50,6 +49,7 @@
         </RelativeLayout>
 
         <com.google.android.material.tabs.TabLayout
+            android:layout_marginTop="2dp"
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

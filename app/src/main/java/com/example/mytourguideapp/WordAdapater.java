@@ -32,13 +32,13 @@ public class WordAdapater extends ArrayAdapter<WordDataModel> {
         }
         WordDataModel currentNumbersList = getItem(position);
 
-        TextView listItemDefaultTranslation = (TextView) listItemView.findViewById(R.id.default_languange);
+        TextView listItemDefaultTranslation = (TextView) listItemView.findViewById(R.id.places_name);
         listItemDefaultTranslation.setText(currentNumbersList.getDefaultTrasnlation());
 
-        TextView indoTranslationList = (TextView) listItemView.findViewById(R.id.indo_languange_list);
+        TextView indoTranslationList = (TextView) listItemView.findViewById(R.id.location_name);
         indoTranslationList.setText(currentNumbersList.getLanguangeTranslation());
 
-        ImageView imageViewList = (ImageView) listItemView.findViewById(R.id.image_list);
+        ImageView imageViewList = (ImageView) listItemView.findViewById(R.id.image_on_cardview);
         if (currentNumbersList.hasImage()){
             imageViewList.setImageResource(currentNumbersList.getImageDrawable());
 
