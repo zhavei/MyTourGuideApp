@@ -50,7 +50,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/places_name"
+                    android:id="@+id/location_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginStart="16dp"
@@ -62,7 +62,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/location_name"
+                    android:id="@+id/places_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginStart="16dp"
@@ -78,9 +78,9 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
                 android:src="@drawable/ic_baseline_navigation_24" />
 
             <View
