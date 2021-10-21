@@ -1,22 +1,25 @@
 package com.example.mytourguideapp;
+
 import android.graphics.drawable.Drawable;
 
 public class WorldDataModel {
 
     private String name;
-    private Drawable image =null;
+    private Drawable image = null;
     private Drawable imageThumbnail;
     private String address = "";
-    private String website= "";
+    private String website = "";
     private String deskription = "";
 
-    public WorldDataModel(String name, String address, Drawable imageThumbnail){
+    //view model data for each item on list
+    public WorldDataModel(String name, String address, Drawable imageThumbnail) {
         this.name = name;
         this.address = address;
         this.imageThumbnail = imageThumbnail;
     }
 
-    public WorldDataModel(String name, Drawable image, String address, String website, String deskription){
+    //view model data for details activity
+    public WorldDataModel(String name, Drawable image, String address, String website, String deskription) {
         this.name = name;
         this.image = image;
         this.address = address;
@@ -24,6 +27,7 @@ public class WorldDataModel {
         this.deskription = deskription;
     }
 
+    //getters
     public String getName() {
         return name;
     }
