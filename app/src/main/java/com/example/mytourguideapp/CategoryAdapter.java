@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class CategoryAdapter extends FragmentStateAdapter {
 
-    private String[] titles = new String[]{"Mountains", "Cities", "Family", "Phrases"};
+    private String[] titles = new String[]{"Mountains", "Cities", "Islands", "seas"};
 
     public CategoryAdapter( FragmentActivity fragmentActivity) {
         super(fragmentActivity);
@@ -19,8 +19,8 @@ public class CategoryAdapter extends FragmentStateAdapter {
         {
             case 0: return new MountainFragment();
             case 1: return new CityFragment();
-            case 2: return new FamiliyFragment();
-            case 3: return new PhrasesFragment();
+            case 2: return new IslandFragment();
+            case 3: return new SeasFragment();
         }
         return new MountainFragment();
     }

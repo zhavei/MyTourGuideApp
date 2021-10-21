@@ -17,20 +17,21 @@ import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WorldAdapter extends ArrayAdapter <WorldDataModel> {
+public class WorldAdapter extends ArrayAdapter<WorldDataModel> {
 
-    public WorldAdapter( Context context, ArrayList<WorldDataModel> worldDataModels) {
-        super(context, 0,  worldDataModels);
+    public WorldAdapter(Context context, ArrayList<WorldDataModel> worldDataModels) {
+        super(context, 0, worldDataModels);
     }
 
+    //adapters for inflate data to list item layout.
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 
         View listItem = convertView;
-        if (listItem == null ) {
+        if (listItem == null) {
             listItem = LayoutInflater.from(getContext()).inflate(R.layout.list_item_layout, parent, false);
         }
-
+        // get item posistion
         WorldDataModel currentWorld = getItem(position);
 
         ImageView imageView = (ImageView) listItem.findViewById(R.id.image_on_cardview);
