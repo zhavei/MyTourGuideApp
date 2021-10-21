@@ -41,14 +41,18 @@ public class MountainFragment extends Fragment {
         final ArrayList<WorldDataModel> mountainArrays = new ArrayList<WorldDataModel>();
         for (int n = 1; n <= LOCATION_SIZE; n++){
             //get Location Name
-            resourceId = getResources().getIdentifier("location_name_" + LOCATION_TYPE + "_" + n, "string", getActivity().getPackageName());
+            resourceId = getResources().getIdentifier("location_name_" + LOCATION_TYPE
+                    + "_" + n, "string", getActivity().getPackageName());
             name = getResources().getString(resourceId);
 
-            resourceId = getResources().getIdentifier("location_address_" + LOCATION_TYPE + "_" + n, "string", getActivity().getPackageName());
+            //get address
+            resourceId = getResources().getIdentifier("location_address_" + LOCATION_TYPE
+                    + "_" + n, "string", getActivity().getPackageName());
             address = getResources().getString(resourceId);
 
             //get image thumbnail
-            resourceId = getResources().getIdentifier("location_thumbnail_" + LOCATION_TYPE + "_" + n, "string", getActivity().getPackageName());
+            resourceId = getResources().getIdentifier("location_thumbnail_" + LOCATION_TYPE
+                    + "_" + n, "string", getActivity().getPackageName());
             imageName = getResources().getString(resourceId);
             imageId = getResources().getIdentifier(imageName, "drawable", getActivity().getPackageName());
             image = getResources().getDrawable(imageId);

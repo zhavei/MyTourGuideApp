@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     CategoryAdapter categoryAdapter;
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    private String[] titles = new String[]{"Numbers", "Colors", "Family", "Phrases"};
+    private String[] titles = new String[]{"Mountains", "Cities", "Family", "Phrases"};
 
 
     @Override

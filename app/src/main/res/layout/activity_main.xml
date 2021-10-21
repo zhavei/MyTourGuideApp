@@ -30,7 +30,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/shadow_background_1"
+                android:outlineAmbientShadowColor="@color/black"
                 android:contextClickable="true"
                 android:elevation="8dp"
                 app:cardElevation="10dp">
@@ -51,6 +51,7 @@
         <com.google.android.material.tabs.TabLayout
             android:layout_marginTop="2dp"
             android:id="@+id/tab_layout"
+            app:tabMode="scrollable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
