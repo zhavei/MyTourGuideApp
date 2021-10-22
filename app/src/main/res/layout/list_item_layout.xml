@@ -51,6 +51,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:fontFamily="sans-serif-smallcaps"
                     android:id="@+id/location_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -58,7 +59,7 @@
                     android:layout_weight="1"
                     android:gravity="bottom"
                     android:text="default languange"
-                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
@@ -69,6 +70,7 @@
                     android:background="@android:color/darker_gray"/>
 
                 <TextView
+                    android:fontFamily="sans-serif-light"
                     android:id="@+id/places_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -76,7 +78,7 @@
                     android:layout_weight="1"
                     android:gravity="start"
                     android:text="indolanguange"
-                    android:textAppearance="@android:style/TextAppearance.Medium"
+                    android:textAppearance="@android:style/TextAppearance.Small"
                     android:textColor="#8E8484"
                     android:textStyle="italic" />
 
