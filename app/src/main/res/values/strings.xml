@@ -7,15 +7,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="city_name">Madrid</string>
+    <string name="city_name">Indonesia</string>
+    <string name="in_city_name">In Indonesia</string>
     <string name="category_1">Culture</string>
     <string name="category_2">Shopping</string>
     <string name="category_3">Food</string>
     <string name="category_4">Leisure</string>
-    <string name="category_extended_1">Culture in</string>
-    <string name="category_extended_2">Shopping in</string>
-    <string name="category_extended_3">Restaurants in</string>
-    <string name="category_extended_4">Leisure in</string>
+    <string name="category_extended_1">Mountains</string>
+    <string name="category_extended_2">Cities</string>
+    <string name="category_extended_3">Islands</string>
+    <string name="category_extended_4">Seas</string>
     <string name="full_screen_advice">Tap image to go back</string>
     <string name="content_description_main_image">Main image</string>
     <string name="content_description_category_1">Culture in Madrid</string>

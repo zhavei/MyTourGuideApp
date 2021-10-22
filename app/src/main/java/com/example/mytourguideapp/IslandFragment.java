@@ -1,5 +1,6 @@
 package com.example.mytourguideapp;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -70,6 +71,13 @@ public class IslandFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Toast.makeText(getActivity(), "clicked", Toast.LENGTH_SHORT).show();
+
+                WorldDataModel worldDataModel = islandArray.get(position);
+                Toast.makeText(getActivity(), " finish play", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                intent.putExtra("category", LOCATION_TYPE);
+                intent.putExtra("location", position + 1);
+                getActivity().startActivity(intent);
             }
         });
 
