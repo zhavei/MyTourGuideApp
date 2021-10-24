@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/splash_main_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyTourGuideApp">
+        <activity android:name=".DetailsActivity">
+        </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>

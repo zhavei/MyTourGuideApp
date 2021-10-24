@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     CategoryAdapter categoryAdapter;
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    private String[] titles = new String[]{"Mountains", "Cities", "Islands", "seas"};
+    private String[] titles = new String[]{"Mountains", "Cities", "Islands", "Seas"};
 
 
     @Override
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         viewPager2 = findViewById(R.id.view_pager);
         tabLayout = findViewById(R.id.tab_layout);
         categoryAdapter = new CategoryAdapter(this);

@@ -10,6 +10,9 @@ public class WorldDataModel {
     private String address = "";
     private String website = "";
     private String deskription = "";
+    private String share = "";
+
+
 
     //view model data for each item on list
     public WorldDataModel(String name, String address, Drawable imageThumbnail) {
@@ -19,13 +22,15 @@ public class WorldDataModel {
     }
 
     //view model data for details activity
-    public WorldDataModel(String name, Drawable image, String address, String website, String deskription) {
+    public WorldDataModel(String name, Drawable image, String address, String website, String share, String deskription) {
         this.name = name;
         this.image = image;
         this.address = address;
         this.website = website;
         this.deskription = deskription;
+        this.share = share;
     }
+
 
     //getters
     public String getName() {
@@ -46,6 +51,10 @@ public class WorldDataModel {
 
     public String getWebsite() {
         return website;
+    }
+
+    public String getShare() {
+        return share;
     }
 
     public String getDeskription() {
