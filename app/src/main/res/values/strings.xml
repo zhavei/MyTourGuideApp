@@ -13,10 +13,10 @@
     <string name="category_2">Shopping</string>
     <string name="category_3">Food</string>
     <string name="category_4">Leisure</string>
-    <string name="category_extended_1">Mountains</string>
-    <string name="category_extended_2">Cities</string>
-    <string name="category_extended_3">Islands</string>
-    <string name="category_extended_4">Seas</string>
+    <string name="category_title_1">Mountains</string>
+    <string name="category_title_2">Cities</string>
+    <string name="category_title_3">Islands</string>
+    <string name="category_title_4">Seas</string>
     <string name="full_screen_advice">Tap image to go back</string>
     <string name="content_description_main_image">Main image</string>
     <string name="content_description_category_1">Culture in Madrid</string>
@@ -313,5 +313,7 @@
     <string name="location_web_4_10">http://www.android.com</string>
     <string name="location_description_4_10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque metus in vehicula iaculis. Aenean pulvinar diam neque, in interdum sem malesuada ut. Donec varius libero vel mi convallis, non accumsan nibh aliquam. Morbi ultricies suscipit neque eu egestas. Nulla efficitur ex et porttitor vestibulum. Vestibulum scelerisque eleifend justo non mollis. \n\nMaecenas congue, tellus sit amet ultricies mattis, quam risus hendrerit velit, vel ultricies dui magna nec dolor. Nunc est justo, congue ut justo vitae, eleifend sollicitudin neque. Ut placerat nunc quis purus imperdiet ornare. Etiam a egestas risus, quis egestas dolor. Ut hendrerit dictum metus nec pretium. Nulla hendrerit, est pellentesque pulvinar mattis, mi orci dignissim mauris, sit amet interdum nisi massa eu justo. Sed ante risus, condimentum et pretium vitae, tempus non tellus. Integer nec nisi in eros varius lobortis vel at purus. Proin ante dui, pretium et mollis eu, pharetra eu mauris. Sed finibus, sapien vitae consectetur vulputate, nisi velit pretium eros, vel consectetur augue risus sed diam.\n\nNulla accumsan bibendum commodo. Suspendisse et ornare enim. Nam viverra augue ut gravida ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed congue porttitor velit, sit amet feugiat lacus faucibus vitae. Duis posuere fringilla dolor, eu feugiat est volutpat et. Morbi commodo, ante quis varius pellentesque, urna nibh viverra diam, eu faucibus turpis nisl at eros. \n\nMorbi at ligula lacinia, malesuada magna a, consequat mauris. Proin placerat imperdiet orci, finibus semper risus luctus vitae. Phasellus a scelerisque urna, in vulputate tellus. Quisque non nisl gravida, pharetra est eget, accumsan dui. Aenean vel rhoncus lacus, a lobortis massa. Donec ornare, massa eu convallis elementum, velit velit hendrerit diam, sed consequat risus ante vitae leo. Pellentesque ac maximus arcu. Quisque dictum pulvinar vehicula. Morbi a auctor libero, sed elementum nulla.</string>
     <string name="dummy_text">Jarlsberg lancashire edam. Dolcelatte hard cheese brie st. agur blue cheese caerphilly bavarian bergkase cheese and biscuits mascarpone. Cheeseburger swiss bavarian bergkase cream cheese fromage frais cheesy feet port-salut airedale. St. agur blue cheese rubber cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese the big cheese.</string>
+    <string name="share_subject">Share this Location</string>
+    <string name="share_using">Do Enjoy Your Party Mr.Wick</string>
 
 </resources>

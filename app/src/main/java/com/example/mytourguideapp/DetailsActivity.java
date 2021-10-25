@@ -1,7 +1,6 @@
 package com.example.mytourguideapp;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
@@ -29,31 +27,36 @@ public class DetailsActivity extends AppCompatActivity {
         categoryid = getIntent().getExtras().getInt("category");
         locationId = getIntent().getExtras().getInt("location");
 
+
         //set title/label activity for toolbar
-        CollapsingToolbarLayout collapsingToolbarLayout1 = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tollbar),
-                collapsingToolbarLayout2 = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tollbar),
-                collapsingToolbarLayout3 = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tollbar),
-                collapsingToolbarLayout4 = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tollbar);
+        CollapsingToolbarLayout collapsingToolbarLayout1;
+        collapsingToolbarLayout1 = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tollbar);
+        CollapsingToolbarLayout collapsingToolbarLayout2;
+        collapsingToolbarLayout2 = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tollbar);
+        CollapsingToolbarLayout collapsingToolbarLayout3;
+        collapsingToolbarLayout3 = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tollbar);
+        CollapsingToolbarLayout collapsingToolbarLayout4;
+        collapsingToolbarLayout4 = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tollbar);
 
         //set activity title
         switch (categoryid) {
             case 1:
-                collapsingToolbarLayout1.setTitle(getResources().getString(R.string.category_extended_1) + " " + getResources().getString(R.string.in_city_name));
+                collapsingToolbarLayout1.setTitle(getResources().getString(R.string.category_title_1) + " " + getResources().getString(R.string.in_city_name));
                 collapsingToolbarLayout1.setExpandedTitleTextAppearance(R.style.expanded_appbarr);
                 collapsingToolbarLayout1.setCollapsedTitleTextAppearance(R.style.collapseAppBar);
                 break;
             case 2:
-                collapsingToolbarLayout2.setTitle(getResources().getString(R.string.category_extended_2) + " " + getResources().getString(R.string.in_city_name));
+                collapsingToolbarLayout2.setTitle(getResources().getString(R.string.category_title_2) + " " + getResources().getString(R.string.in_city_name));
                 collapsingToolbarLayout2.setExpandedTitleTextAppearance(R.style.expanded_appbarr);
                 collapsingToolbarLayout2.setCollapsedTitleTextAppearance(R.style.collapseAppBar);
                 break;
             case 3:
-                collapsingToolbarLayout3.setTitle(getResources().getString(R.string.category_extended_3) + " " + getResources().getString(R.string.in_city_name));
+                collapsingToolbarLayout3.setTitle(getResources().getString(R.string.category_title_3) + " " + getResources().getString(R.string.in_city_name));
                 collapsingToolbarLayout3.setExpandedTitleTextAppearance(R.style.expanded_appbarr);
                 collapsingToolbarLayout3.setCollapsedTitleTextAppearance(R.style.collapseAppBar);
                 break;
             case 4:
-                collapsingToolbarLayout4.setTitle(getResources().getString(R.string.category_extended_4) + " " + getResources().getString(R.string.in_city_name));
+                collapsingToolbarLayout4.setTitle(getResources().getString(R.string.category_title_4) + " " + getResources().getString(R.string.in_city_name));
                 collapsingToolbarLayout4.setExpandedTitleTextAppearance(R.style.expanded_appbarr);
                 collapsingToolbarLayout4.setCollapsedTitleTextAppearance(R.style.collapseAppBar);
                 break;
@@ -102,9 +105,17 @@ public class DetailsActivity extends AppCompatActivity {
         goToShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, "share to");
-                startActivity(intent);
+                /*Create an ACTION_SEND Intent*/
+                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                /*This will be the actual content you wish you share.*/
+                String shareBody = "getForDetailsActData()";
+                /*The type of the content is text, obviously.*/
+                intent.setType("text/plain");
+                /*Applying information Subject and Body.*/
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.share_subject));
+                intent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                /*Fire!*/
+                startActivity(Intent.createChooser(intent, getString(R.string.share_using)));
             }
         });
 
