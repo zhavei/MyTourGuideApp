@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+
 import java.util.ArrayList;
 
 
@@ -25,7 +27,7 @@ public class MountainFragment extends Fragment {
     }
 
     @Override
-    public void onCreate( Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
@@ -40,7 +42,7 @@ public class MountainFragment extends Fragment {
         int resourceId, imageId;
 
         final ArrayList<WorldDataModel> mountainArrays = new ArrayList<WorldDataModel>();
-        for (int n = 1; n <= LOCATION_SIZE; n++){
+        for (int n = 1; n <= LOCATION_SIZE; n++) {
             //get Location Name
             resourceId = getResources().getIdentifier("location_name_" + LOCATION_TYPE
                     + "_" + n, "string", getActivity().getPackageName());
@@ -59,7 +61,7 @@ public class MountainFragment extends Fragment {
             image = getResources().getDrawable(imageId);
 
             //add new data to list
-            mountainArrays.add(new WorldDataModel(name, address, image ));
+            mountainArrays.add(new WorldDataModel(name, address, image));
         }
 
 
