@@ -64,12 +64,10 @@ public class DetailsActivity extends AppCompatActivity {
         //method load data to details
         getForDetailsActData();
 
-
+        // set to each item view
         ImageView imageView = (ImageView) findViewById(R.id.image_view_details);
         imageView.setImageDrawable(worldDataModel.getImage());
 
-        TextView infoTextDeskrip = (TextView) findViewById(R.id.info_text_deskription);
-        infoTextDeskrip.setText(worldDataModel.getName());
 
         TextView mapsTextView = (TextView) findViewById(R.id.textview_goto_maps);
         mapsTextView.setText(worldDataModel.getAddress());
@@ -79,6 +77,12 @@ public class DetailsActivity extends AppCompatActivity {
 
         TextView shareTextView = (TextView) findViewById(R.id.textview_goto_share);
         shareTextView.setText(worldDataModel.getShare());
+
+        TextView infoTextDeskrip = (TextView) findViewById(R.id.info_text_deskription);
+        infoTextDeskrip.setText(worldDataModel.getName());
+
+        TextView textDeskription = (TextView) findViewById(R.id.textview_deskription);
+        textDeskription.setText(worldDataModel.getDeskription());
 
         //behavior click
         RelativeLayout goToWeb = (RelativeLayout) findViewById(R.id._rela_goto_web);
@@ -142,14 +146,14 @@ public class DetailsActivity extends AppCompatActivity {
         resoureId = getResources().getIdentifier("location_web_" + categoryid + "_" + locationId, "string", getPackageName());
         web = getResources().getString(resoureId);
 
-        resoureId = getResources().getIdentifier("location_web_" + categoryid + "_" + locationId, "string", getPackageName());
+        resoureId = getResources().getIdentifier("share_subject", "string", getPackageName());
         share = getResources().getString(resoureId);
 
         resoureId = getResources().getIdentifier("location_description_" + categoryid + "_" + locationId, "string", getPackageName());
         deskription = getResources().getString(resoureId);
 
-        worldDataModel = new WorldDataModel(name, image, addres, web, share, deskription);
 
+        worldDataModel = new WorldDataModel(name, image, addres, web, share, deskription);
     }
 
 }
