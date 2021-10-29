@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -26,7 +24,6 @@ public class DetailsActivity extends AppCompatActivity {
         //get param
         categoryid = getIntent().getExtras().getInt("category");
         locationId = getIntent().getExtras().getInt("location");
-
 
         //set title/label activity for toolbar
         CollapsingToolbarLayout collapsingToolbarLayout1;
@@ -67,7 +64,6 @@ public class DetailsActivity extends AppCompatActivity {
         // set to each item view
         ImageView imageView = (ImageView) findViewById(R.id.image_view_details);
         imageView.setImageDrawable(worldDataModel.getImage());
-
 
         TextView mapsTextView = (TextView) findViewById(R.id.textview_goto_maps);
         mapsTextView.setText(worldDataModel.getAddress());
@@ -112,7 +108,7 @@ public class DetailsActivity extends AppCompatActivity {
                 /*Create an ACTION_SEND Intent*/
                 Intent intent = new Intent(android.content.Intent.ACTION_SEND);
                 /*This will be the actual content you wish you share.*/
-                String shareBody = "getForDetailsActData()";
+                String shareBody = worldDataModel.getName() + ", " + worldDataModel.getAddress() + ", " + worldDataModel.getWebsite();
                 /*The type of the content is text, obviously.*/
                 intent.setType("text/plain");
                 /*Applying information Subject and Body.*/
@@ -122,10 +118,7 @@ public class DetailsActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(intent, getString(R.string.share_using)));
             }
         });
-
-
     }
-
 
     private void getForDetailsActData() {
         int resoureId, imageId;
@@ -152,8 +145,6 @@ public class DetailsActivity extends AppCompatActivity {
         resoureId = getResources().getIdentifier("location_description_" + categoryid + "_" + locationId, "string", getPackageName());
         deskription = getResources().getString(resoureId);
 
-
         worldDataModel = new WorldDataModel(name, image, addres, web, share, deskription);
     }
-
 }
