@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
+import java.text.MessageFormat;
+
 public class DetailsActivity extends AppCompatActivity {
     WorldDataModel worldDataModel;
     private int categoryid = 1;
@@ -66,7 +68,7 @@ public class DetailsActivity extends AppCompatActivity {
         imageView.setImageDrawable(worldDataModel.getImage());
 
         TextView mapsTextView = (TextView) findViewById(R.id.textview_goto_maps);
-        mapsTextView.setText(worldDataModel.getAddress());
+        mapsTextView.setText(MessageFormat.format("{0}, {1}", worldDataModel.getName(), worldDataModel.getAddress()));
 
         TextView webTextView = (TextView) findViewById(R.id.textview_goto_web);
         webTextView.setText(worldDataModel.getWebsite());
