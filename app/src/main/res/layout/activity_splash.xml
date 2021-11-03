@@ -12,14 +12,22 @@
         android:src="@drawable/splash_img"
         android:scaleType="centerCrop"/>
 
+    <ImageView
+        android:layout_width="242dp"
+        android:layout_height="172dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_card_travel_24" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MY TOUR GUIDE APP"
+        android:text="@string/my_tour_guide_app"
         android:layout_centerInParent="true"
         android:layout_alignParentBottom="true"
         android:textSize="25sp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_marginBottom="25dp"/>
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginBottom="250dp"/>
 
 </RelativeLayout>

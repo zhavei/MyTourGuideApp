@@ -9,16 +9,17 @@ import android.view.View;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private final int SPLASH_DISPLAY_lENGTH = 2000;
+    private final int SPLASH_DISPLAY_lENGTH = 2500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-//        getSupportActionBar().hide();
+        //ligth status bar
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
+        //handler for set delay to mainactivity
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -27,6 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         }, SPLASH_DISPLAY_lENGTH);
     }
 
+    //get intent mainactivity
     private void goToListPlacesActivity() {
         Intent intent = new Intent (this.getApplicationContext(), MainActivity.class);
         startActivity(intent);

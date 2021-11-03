@@ -14,7 +14,9 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import java.text.MessageFormat;
 
 public class DetailsActivity extends AppCompatActivity {
+    //class model
     WorldDataModel worldDataModel;
+    //initialize for method getForDetailsActData()
     private int categoryid = 1;
     private int locationId = 1;
 
@@ -37,7 +39,7 @@ public class DetailsActivity extends AppCompatActivity {
         CollapsingToolbarLayout collapsingToolbarLayout4;
         collapsingToolbarLayout4 = (CollapsingToolbarLayout) findViewById(R.id.collapsing_tollbar);
 
-        //set activity title
+        //set activity title and collapse toolbar
         switch (categoryid) {
             case 1:
                 collapsingToolbarLayout1.setTitle(getResources().getString(R.string.category_title_1) + " " + getResources().getString(R.string.in_city_name));
@@ -87,6 +89,7 @@ public class DetailsActivity extends AppCompatActivity {
         RelativeLayout goToMap = (RelativeLayout) findViewById(R.id.rela_goto_maps);
         RelativeLayout goToShare = (RelativeLayout) findViewById(R.id.rela_goto_share);
 
+        //open web browser
         goToWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +99,7 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
+        //open maps
         goToMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,6 +108,7 @@ public class DetailsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //share location
         goToShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +127,7 @@ public class DetailsActivity extends AppCompatActivity {
         });
     }
 
+    //method get param
     private void getForDetailsActData() {
         int resoureId, imageId;
         String name, imageName, addres, web, share, deskription;

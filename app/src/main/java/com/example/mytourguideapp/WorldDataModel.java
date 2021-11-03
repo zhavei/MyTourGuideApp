@@ -2,8 +2,11 @@ package com.example.mytourguideapp;
 
 import android.graphics.drawable.Drawable;
 
+//this model data i get it from David tourguideapp repo
+
 public class WorldDataModel {
 
+    //name for inflating data
     private String name;
     private Drawable image = null;
     private Drawable imageThumbnail;
@@ -11,8 +14,6 @@ public class WorldDataModel {
     private String website = "";
     private String deskription = "";
     private String share = "";
-
-
 
     //view model data for each item on list
     public WorldDataModel(String name, String address, Drawable imageThumbnail) {

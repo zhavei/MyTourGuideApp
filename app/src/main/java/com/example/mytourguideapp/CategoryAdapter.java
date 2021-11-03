@@ -7,6 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class CategoryAdapter extends FragmentStateAdapter {
 
+    //create category for fragment
     private String[] titles = new String[]{"Mountains", "Cities", "Islands", "seas"};
 
     public CategoryAdapter( FragmentActivity fragmentActivity) {
@@ -25,6 +26,7 @@ public class CategoryAdapter extends FragmentStateAdapter {
         return new MountainFragment();
     }
 
+    //indicate size off fragment
     @Override
     public int getItemCount() {
         return titles.length;

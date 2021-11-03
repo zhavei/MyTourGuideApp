@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.TooManyListenersException;
 
 public class CityFragment extends Fragment {
+
+    // location size limit to 10
+    // cityfragment is no 2
     private final int LOCATION_SIZE = 10;
     private final int LOCATION_TYPE = 2;
 
@@ -32,6 +35,7 @@ public class CityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        //inflate to list xml
         View rootView = inflater.inflate(R.layout.word_list_activity, container, false);
 
         String name, imageName, address;
@@ -74,7 +78,6 @@ public class CityFragment extends Fragment {
                 Toast.makeText(getActivity(), " item clicked", Toast.LENGTH_SHORT).show();
 
                 WorldDataModel worldDataModel = cityArrays.get(position);
-                Toast.makeText(getActivity(), " finish play", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("category", LOCATION_TYPE);
                 intent.putExtra("location", position + 1);

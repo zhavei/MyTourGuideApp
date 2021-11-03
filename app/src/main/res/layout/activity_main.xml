@@ -41,7 +41,7 @@
                     android:layout_gravity="center"
                     android:textSize="25sp"
                     android:textStyle="bold"
-                    android:text="My Tour Guide App"
+                    android:text="@string/my_tour_guide_app1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             </com.google.android.material.card.MaterialCardView>

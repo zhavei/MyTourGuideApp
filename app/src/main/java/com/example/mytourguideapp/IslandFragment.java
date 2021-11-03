@@ -73,7 +73,6 @@ public class IslandFragment extends Fragment {
                 Toast.makeText(getActivity(), "clicked", Toast.LENGTH_SHORT).show();
 
                 WorldDataModel worldDataModel = islandArray.get(position);
-                Toast.makeText(getActivity(), " finish play", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("category", LOCATION_TYPE);
                 intent.putExtra("location", position + 1);

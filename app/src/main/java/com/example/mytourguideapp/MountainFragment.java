@@ -77,9 +77,6 @@ public class MountainFragment extends Fragment {
 
                 WorldDataModel worldDataModel = mountainArrays.get(position);
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
-
-                Toast.makeText(getActivity(), " finish play", Toast.LENGTH_SHORT).show();
-
                 intent.putExtra("category", LOCATION_TYPE);
                 intent.putExtra("location", position + 1);
 
