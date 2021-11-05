@@ -13,7 +13,6 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
-import java.util.TooManyListenersException;
 
 public class CityFragment extends Fragment {
 
@@ -68,7 +67,7 @@ public class CityFragment extends Fragment {
 
         // using simple recyceview
         WorldAdapter adapter = new WorldAdapter(getActivity(), cityArrays);
-        ListView listView = (ListView) rootView.findViewById(R.id.list_layout);
+        ListView listView = (ListView) rootView.findViewById(R.id.word_list_activity);
         listView.setAdapter(adapter);
 
         //add onclick behavior

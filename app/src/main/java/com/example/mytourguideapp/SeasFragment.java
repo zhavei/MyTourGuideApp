@@ -14,7 +14,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class SeasFragment extends Fragment {
 
@@ -67,7 +66,7 @@ public class SeasFragment extends Fragment {
 
         //inflate to recycle view
         WorldAdapter adapter = new WorldAdapter(getActivity(), seasArrays);
-        ListView listView = (ListView) rootView.findViewById(R.id.list_layout);
+        ListView listView = (ListView) rootView.findViewById(R.id.word_list_activity);
         listView.setAdapter(adapter);
 
         //add click behavior

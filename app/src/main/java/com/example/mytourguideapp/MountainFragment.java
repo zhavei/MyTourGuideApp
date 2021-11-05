@@ -8,11 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.ArrayList;
 
@@ -64,12 +61,12 @@ public class MountainFragment extends Fragment {
             mountainArrays.add(new WorldDataModel(name, address, image));
         }
 
-
         // using simple recycle view
         WorldAdapter adapter = new WorldAdapter(getActivity(), mountainArrays);
-        ListView listView = (ListView) rootView.findViewById(R.id.list_layout);
+        ListView listView = (ListView) rootView.findViewById(R.id.word_list_activity);
         listView.setAdapter(adapter);
 
+        //on list item click
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

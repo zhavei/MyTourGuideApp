@@ -5,7 +5,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,7 +61,7 @@ public class IslandFragment extends Fragment {
 
         //using simple rcyceview adapter
         WorldAdapter adapter = new WorldAdapter(getActivity(), islandArray);
-        ListView listView = (ListView) rootView.findViewById(R.id.list_layout);
+        ListView listView = (ListView) rootView.findViewById(R.id.word_list_activity);
         listView.setAdapter(adapter);
 
         //onitem click behavior
