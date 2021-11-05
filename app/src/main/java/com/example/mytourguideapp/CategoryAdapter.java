@@ -27,7 +27,7 @@ public class CategoryAdapter extends FragmentStateAdapter {
     }
 
     //indicate size off fragment
-    @Override
+
     public int getItemCount() {
         return titles.length;
     }

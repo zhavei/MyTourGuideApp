@@ -17,6 +17,7 @@ public class WorldDataModel {
 
     //view model data for each item on list
     public WorldDataModel(String name, String address, Drawable imageThumbnail) {
+
         this.name = name;
         this.address = address;
         this.imageThumbnail = imageThumbnail;

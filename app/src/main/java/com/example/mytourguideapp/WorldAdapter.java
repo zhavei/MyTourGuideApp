@@ -27,23 +27,22 @@ public class WorldAdapter extends ArrayAdapter<WorldDataModel> {
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 
-        View listItem = convertView;
-        if (listItem == null) {
-            listItem = LayoutInflater.from(getContext()).inflate(R.layout.list_item_layout, parent, false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_layout, parent, false);
         }
         // get item posistion
         WorldDataModel currentWorld = getItem(position);
 
-        ImageView imageView = (ImageView) listItem.findViewById(R.id.image_on_cardview);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.image_on_cardview);
         imageView.setImageDrawable(currentWorld.getImageThumbnail());
 
-        TextView textView = (TextView) listItem.findViewById(R.id.location_name);
+        TextView textView = (TextView) convertView.findViewById(R.id.location_name);
         textView.setText(currentWorld.getName());
 
-        TextView textView1 = (TextView) listItem.findViewById(R.id.places_name);
+        TextView textView1 = (TextView) convertView.findViewById(R.id.places_name);
         textView1.setText(currentWorld.getAddress());
 
-        return listItem;
+        return convertView;
     }
 }
 
