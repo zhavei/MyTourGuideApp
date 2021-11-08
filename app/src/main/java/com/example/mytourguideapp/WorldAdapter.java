@@ -17,6 +17,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 import java.util.List;
 
+//cureently not using this
 public class WorldAdapter extends ArrayAdapter<WorldDataModel> {
 
     public WorldAdapter(Context context, ArrayList<WorldDataModel> worldDataModels) {
