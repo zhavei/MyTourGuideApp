@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -62,26 +64,38 @@ public class MountainFragment extends Fragment {
         }
 
         // using simple recycle view
-        WorldAdapter adapter = new WorldAdapter(getActivity(), mountainArrays);
-        ListView listView = (ListView) rootView.findViewById(R.id.word_list_activity);
-        listView.setAdapter(adapter);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.word_list_activity);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(mountainArrays, new RecycleViewWorldAdapter.OnItemClickListener() {
 
-        //on list item click
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(WorldDataModel item) {
 
-
-                WorldDataModel worldDataModel = mountainArrays.get(position);
+                WorldDataModel worldDataModel = item;
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("category", LOCATION_TYPE);
-                intent.putExtra("location", position + 1);
-
+                intent.putExtra("location",   + 1);
                 getActivity().startActivity(intent);
-
-
             }
         });
+        recyclerView.setAdapter(adapter);
+
+        //on list item click
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//
+//                WorldDataModel worldDataModel = mountainArrays.get(position);
+//                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+//                intent.putExtra("category", LOCATION_TYPE);
+//                intent.putExtra("location", position + 1);
+//
+//                getActivity().startActivity(intent);
+//
+//
+//            }
+//        });
 
         // Inflate the layout for this fragment
         return rootView;
