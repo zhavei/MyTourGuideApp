@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,34 +20,21 @@ public class RecycleViewWorldAdapter extends RecyclerView.Adapter<RecycleViewWor
 
         public TextView textViewLocationName, textViewPlacesName;
         public ImageView imageOnCard;
+        public LinearLayout linearLayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             textViewLocationName = (TextView) itemView.findViewById(R.id.location_name);
             textViewPlacesName = (TextView) itemView.findViewById(R.id.places_name);
             imageOnCard = (ImageView) itemView.findViewById(R.id.image_on_cardview);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.linearlayout_on_rv);
 
-            textViewLocationName.setOnClickListener(new View.OnClickListener() {
+            linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.onItemClick(worldDataModelArrayList.get(getAdapterPosition()));
+                    listener.onItemClick(worldDataModelArrayList.get(getAdapterPosition()), getAdapterPosition());
                 }
             });
-
-            textViewPlacesName.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onItemClick(worldDataModelArrayList.get(getAdapterPosition()));
-                }
-            });
-
-            imageOnCard.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onItemClick(worldDataModelArrayList.get(getAdapterPosition()));
-                }
-            });
-
         }
     }
 
@@ -62,8 +50,8 @@ public class RecycleViewWorldAdapter extends RecyclerView.Adapter<RecycleViewWor
     @Override
     public void onBindViewHolder(RecycleViewWorldAdapter.MyViewHolder holder, int position) {
         WorldDataModel worldDataModel = worldDataModelArrayList.get(position);
-        holder.textViewPlacesName.setText(worldDataModel.getName());
         holder.textViewLocationName.setText(worldDataModel.getAddress());
+        holder.textViewPlacesName.setText(worldDataModel.getName());
         holder.imageOnCard.setImageDrawable(worldDataModel.getImageThumbnail());
 
     }
@@ -74,7 +62,7 @@ public class RecycleViewWorldAdapter extends RecyclerView.Adapter<RecycleViewWor
     }
 
     public interface OnItemClickListener {
-        void onItemClick(WorldDataModel item);
+        void onItemClick(WorldDataModel item, int position);
     }
 
     public RecycleViewWorldAdapter(ArrayList<WorldDataModel> worldDataModelArrayList, OnItemClickListener listener) {

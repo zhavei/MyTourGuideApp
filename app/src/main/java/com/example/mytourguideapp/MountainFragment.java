@@ -69,12 +69,12 @@ public class MountainFragment extends Fragment {
         RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(mountainArrays, new RecycleViewWorldAdapter.OnItemClickListener() {
 
             @Override
-            public void onItemClick(WorldDataModel item) {
+            public void onItemClick(WorldDataModel item, int position) {
 
                 WorldDataModel worldDataModel = item;
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("category", LOCATION_TYPE);
-                intent.putExtra("location",   + 1);
+                intent.putExtra("location",   position+ 1);
                 getActivity().startActivity(intent);
             }
         });
