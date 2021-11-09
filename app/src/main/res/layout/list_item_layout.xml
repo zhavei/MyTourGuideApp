@@ -33,6 +33,7 @@
                 app:cardCornerRadius="15dp">
 
                 <ImageView
+                    android:contentDescription="imagecontent"
                     android:id="@+id/image_on_cardview"
                     android:layout_width="100dp"
                     android:layout_height="85dp"
@@ -86,6 +87,7 @@
             </LinearLayout>
 
             <ImageView
+                android:contentDescription="arrowup"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_alignParentEnd="true"
