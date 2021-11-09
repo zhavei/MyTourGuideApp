@@ -5,6 +5,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +41,7 @@ public class IslandFragment extends Fragment {
         int resourceId, imageId;
 
         final ArrayList<WorldDataModel> islandArray = new ArrayList<WorldDataModel>();
-        for (int i = 1; i <= LOCATION_SIZE; i++){
+        for (int i = 1; i <= LOCATION_SIZE; i++) {
             //get location name
             resourceId = getResources().getIdentifier("location_name_" + LOCATION_TYPE + "_" + i, "string", getActivity().getPackageName());
             name = getResources().getString(resourceId);
@@ -60,24 +62,21 @@ public class IslandFragment extends Fragment {
         }
 
         //using simple rcyceview adapter
-        WorldAdapter adapter = new WorldAdapter(getActivity(), islandArray);
-        ListView listView = (ListView) rootView.findViewById(R.id.word_list_activity);
-        listView.setAdapter(adapter);
-
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.word_list_activity);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         //onitem click behavior
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(islandArray, new RecycleViewWorldAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Toast.makeText(getActivity(), "clicked", Toast.LENGTH_SHORT).show();
-
-                WorldDataModel worldDataModel = islandArray.get(position);
+            public void onItemClick(WorldDataModel item, int position) {
+                WorldDataModel worldDataModel = item;
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("category", LOCATION_TYPE);
                 intent.putExtra("location", position + 1);
                 getActivity().startActivity(intent);
             }
         });
+
+        recyclerView.setAdapter(adapter);
 
         // Inflate the layout for this fragment
         return rootView;

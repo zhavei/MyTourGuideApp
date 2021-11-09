@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -66,17 +68,12 @@ public class CityFragment extends Fragment {
         }
 
         // using simple recyceview
-        WorldAdapter adapter = new WorldAdapter(getActivity(), cityArrays);
-        ListView listView = (ListView) rootView.findViewById(R.id.word_list_activity);
-        listView.setAdapter(adapter);
-
-        //add onclick behavior
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.word_list_activity);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(cityArrays, new RecycleViewWorldAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), " item clicked", Toast.LENGTH_SHORT).show();
-
-                WorldDataModel worldDataModel = cityArrays.get(position);
+            public void onItemClick(WorldDataModel item, int position) {
+                WorldDataModel worldDataModel = item;
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("category", LOCATION_TYPE);
                 intent.putExtra("location", position + 1);
@@ -84,6 +81,8 @@ public class CityFragment extends Fragment {
             }
         });
 
+        //add onclick behavior
+        recyclerView.setAdapter(adapter);
 
         // Inflate the layout for this fragment
         return rootView;

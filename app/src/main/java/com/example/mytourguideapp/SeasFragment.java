@@ -5,6 +5,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -65,17 +67,13 @@ public class SeasFragment extends Fragment {
         }
 
         //inflate to recycle view
-        WorldAdapter adapter = new WorldAdapter(getActivity(), seasArrays);
-        ListView listView = (ListView) rootView.findViewById(R.id.word_list_activity);
-        listView.setAdapter(adapter);
-
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.word_list_activity);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         //add click behavior
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(seasArrays, new RecycleViewWorldAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "clidked", Toast.LENGTH_SHORT).show();
-
-                WorldDataModel worldDataModel = seasArrays.get(position);
+            public void onItemClick(WorldDataModel item, int position) {
+                WorldDataModel worldDataModel = item;
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("category", LOCATION_TYPE);
                 intent.putExtra("location", position + 1);
@@ -83,6 +81,9 @@ public class SeasFragment extends Fragment {
             }
         });
 
+        //set adapter
+        recyclerView.setAdapter(adapter);
+        
         // Inflate the layout for this fragment
         return rootView;
     }

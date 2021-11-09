@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearlayout_on_rv"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/linearlayout_on_rv">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -23,41 +23,41 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                app:cardCornerRadius="15dp"
                 android:id="@+id/cardViewImage"
                 android:layout_width="100dp"
                 android:layout_height="85dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
                 android:layout_margin="5dp"
-                app:cardBackgroundColor="@color/black" >
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="15dp">
 
                 <ImageView
-                    android:adjustViewBounds="true"
                     android:id="@+id/image_on_cardview"
-                    android:scaleType="centerCrop"
                     android:layout_width="100dp"
-                    android:layout_height="85dp"/>
+                    android:layout_height="85dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
 
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:id="@+id/text_container"
-                android:layout_marginEnd="35dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
+                android:layout_marginEnd="35dp"
                 android:layout_toRightOf="@+id/cardViewImage"
                 android:minHeight="?android:attr/listPreferredItemHeight"
                 android:orientation="vertical">
 
                 <TextView
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:id="@+id/location_name"
+                    android:id="@+id/places_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:gravity="bottom"
                     android:text="default languange"
                     android:textAppearance="@android:style/TextAppearance.Medium"
@@ -68,15 +68,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="10dp"
-                    android:background="@android:color/darker_gray"/>
+                    android:background="@android:color/darker_gray" />
 
                 <TextView
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/places_name"
+                    android:id="@+id/location_name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="start"
                     android:text="indolanguange"
                     android:textAppearance="@android:style/TextAppearance.Small"

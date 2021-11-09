@@ -2,8 +2,6 @@ package com.example.mytourguideapp;
 
 import android.graphics.drawable.Drawable;
 
-//this model data i get it from David tourguideapp repo
-
 public class WorldDataModel {
 
     //name for inflating data
