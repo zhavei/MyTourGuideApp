@@ -3,6 +3,7 @@ package com.example.mytourguideapp;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,6 +71,8 @@ public class MountainFragment extends Fragment {
         RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(mountainArrays, new RecycleViewWorldAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(WorldDataModel item, int position) {
+                Log.i("MountainFragment", "MountainFragment.getView() — get item number " + position);
+
                 WorldDataModel worldDataModel = item;
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("category", LOCATION_TYPE);
