@@ -1,4 +1,4 @@
-package com.example.mytourguideapp;
+package com.example.mytourguideapp.ui;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -11,19 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
+
+import com.example.mytourguideapp.DetailsActivity;
+import com.example.mytourguideapp.R;
+import com.example.mytourguideapp.RecycleViewWorldAdapter;
+import com.example.mytourguideapp.model.WorldDataModel;
 
 import java.util.ArrayList;
 
-public class SeasFragment extends Fragment {
 
+public class IslandFragment extends Fragment {
     private final int LOCATION_SIZE = 10;
-    private final int LOCATION_TYPE = 4;
+    private final int LOCATION_TYPE = 3;
 
-
-    public SeasFragment() {
+    public IslandFragment() {
         // Required empty public constructor
     }
 
@@ -35,42 +36,38 @@ public class SeasFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.word_list_activity, container, false);
 
         String name, address, imageName;
         Drawable image;
-        int imageId, resourceId;
+        int resourceId, imageId;
 
-        final ArrayList<WorldDataModel> seasArrays = new ArrayList<>();
-        for (int s = 1; s <= LOCATION_SIZE; s++){
-
-            // get name
-            resourceId = getResources().getIdentifier("location_name_" + LOCATION_TYPE + "_" + s,
-                    "string", getActivity().getPackageName());
+        final ArrayList<WorldDataModel> islandArray = new ArrayList<WorldDataModel>();
+        for (int i = 1; i <= LOCATION_SIZE; i++) {
+            //get location name
+            resourceId = getResources().getIdentifier("location_name_" + LOCATION_TYPE + "_" + i, "string", getActivity().getPackageName());
             name = getResources().getString(resourceId);
 
-            //get address
-            resourceId = getResources().getIdentifier("location_address_" + LOCATION_TYPE + "_" + s,
-                    "string", getActivity().getPackageName());
+            //get address name
+            resourceId = getResources().getIdentifier("location_address_" + LOCATION_TYPE + "_" + i, "string", getActivity().getPackageName());
             address = getResources().getString(resourceId);
 
-            //get tumbnail
-
-            resourceId = getResources().getIdentifier("location_thumbnail_" + LOCATION_TYPE + "_" + s,
-                    "string", getActivity().getPackageName());
+            //get image tubmnail
+            resourceId = getResources().getIdentifier("location_thumbnail_" + LOCATION_TYPE + "_" + i, "string", getActivity().getPackageName());
             imageName = getResources().getString(resourceId);
             imageId = getResources().getIdentifier(imageName, "drawable", getActivity().getPackageName());
             image = getResources().getDrawable(imageId);
 
-            seasArrays.add(new WorldDataModel(name, address, image));
+            //add data to list
+            islandArray.add(new WorldDataModel(name, address, image));
+
         }
 
-        //inflate to recycle view
+        //using simple rcyceview adapter
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.word_list_activity);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        //add click behavior
-        RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(seasArrays, new RecycleViewWorldAdapter.OnItemClickListener() {
+        //onitem click behavior
+        RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(islandArray, new RecycleViewWorldAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(WorldDataModel item, int position) {
                 WorldDataModel worldDataModel = item;
@@ -81,9 +78,8 @@ public class SeasFragment extends Fragment {
             }
         });
 
-        //set adapter
         recyclerView.setAdapter(adapter);
-        
+
         // Inflate the layout for this fragment
         return rootView;
     }

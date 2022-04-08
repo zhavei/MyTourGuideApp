@@ -1,4 +1,4 @@
-package com.example.mytourguideapp;
+package com.example.mytourguideapp.model;
 
 import android.graphics.drawable.Drawable;
 

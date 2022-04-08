@@ -1,27 +1,31 @@
-package com.example.mytourguideapp;
+package com.example.mytourguideapp.ui;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.mytourguideapp.DetailsActivity;
+import com.example.mytourguideapp.R;
+import com.example.mytourguideapp.RecycleViewWorldAdapter;
+import com.example.mytourguideapp.model.WorldDataModel;
+
 import java.util.ArrayList;
 
-
-public class MountainFragment extends Fragment {
+public class SeasFragment extends Fragment {
 
     private final int LOCATION_SIZE = 10;
-    private final int LOCATION_TYPE = 1;
+    private final int LOCATION_TYPE = 4;
 
-    public MountainFragment() {
+
+    public SeasFragment() {
         // Required empty public constructor
     }
 
@@ -36,50 +40,52 @@ public class MountainFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.word_list_activity, container, false);
 
-        String name, imageName, address;
+        String name, address, imageName;
         Drawable image;
-        int resourceId, imageId;
+        int imageId, resourceId;
 
-        final ArrayList<WorldDataModel> mountainArrays = new ArrayList<WorldDataModel>();
-        for (int n = 1; n <= LOCATION_SIZE; n++) {
-            //get Location Name
-            resourceId = getResources().getIdentifier("location_name_" + LOCATION_TYPE
-                    + "_" + n, "string", getActivity().getPackageName());
+        final ArrayList<WorldDataModel> seasArrays = new ArrayList<>();
+        for (int s = 1; s <= LOCATION_SIZE; s++){
+
+            // get name
+            resourceId = getResources().getIdentifier("location_name_" + LOCATION_TYPE + "_" + s,
+                    "string", getActivity().getPackageName());
             name = getResources().getString(resourceId);
 
             //get address
-            resourceId = getResources().getIdentifier("location_address_" + LOCATION_TYPE
-                    + "_" + n, "string", getActivity().getPackageName());
+            resourceId = getResources().getIdentifier("location_address_" + LOCATION_TYPE + "_" + s,
+                    "string", getActivity().getPackageName());
             address = getResources().getString(resourceId);
 
-            //get image thumbnail
-            resourceId = getResources().getIdentifier("location_thumbnail_" + LOCATION_TYPE
-                    + "_" + n, "string", getActivity().getPackageName());
+            //get tumbnail
+
+            resourceId = getResources().getIdentifier("location_thumbnail_" + LOCATION_TYPE + "_" + s,
+                    "string", getActivity().getPackageName());
             imageName = getResources().getString(resourceId);
             imageId = getResources().getIdentifier(imageName, "drawable", getActivity().getPackageName());
             image = getResources().getDrawable(imageId);
 
-            //add new data to list
-            mountainArrays.add(new WorldDataModel(name, address, image));
+            seasArrays.add(new WorldDataModel(name, address, image));
         }
 
-        // using simple recycle view
+        //inflate to recycle view
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.word_list_activity);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        //on list item click
-        RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(mountainArrays, new RecycleViewWorldAdapter.OnItemClickListener() {
+        //add click behavior
+        RecycleViewWorldAdapter adapter = new RecycleViewWorldAdapter(seasArrays, new RecycleViewWorldAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(WorldDataModel item, int position) {
                 WorldDataModel worldDataModel = item;
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("category", LOCATION_TYPE);
-                intent.putExtra("location",position + 1);
+                intent.putExtra("location", position + 1);
                 getActivity().startActivity(intent);
             }
         });
 
+        //set adapter
         recyclerView.setAdapter(adapter);
-
+        
         // Inflate the layout for this fragment
         return rootView;
     }
