@@ -1,6 +1,5 @@
 package com.example.mytourguideapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.viewpager2.widget.ViewPager2;
+
+import com.example.mytourguideapp.model.WorldDataModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 //cureently not using this just for learning save
 public class WorldAdapter extends ArrayAdapter<WorldDataModel> {

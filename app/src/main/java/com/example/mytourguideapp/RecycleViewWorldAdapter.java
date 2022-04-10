@@ -7,7 +7,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mytourguideapp.model.WorldDataModel;
 
 import java.util.ArrayList;
 
@@ -40,7 +43,7 @@ public class RecycleViewWorldAdapter extends RecyclerView.Adapter<RecycleViewWor
 
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item_layout, parent, false);
 
@@ -48,7 +51,7 @@ public class RecycleViewWorldAdapter extends RecyclerView.Adapter<RecycleViewWor
     }
 
     @Override
-    public void onBindViewHolder(RecycleViewWorldAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecycleViewWorldAdapter.MyViewHolder holder, int position) {
         WorldDataModel worldDataModel = worldDataModelArrayList.get(position);
         holder.textViewLocationName.setText(worldDataModel.getAddress());
         holder.textViewPlacesName.setText(worldDataModel.getName());

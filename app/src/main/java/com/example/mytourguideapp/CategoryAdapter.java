@@ -4,6 +4,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.mytourguideapp.ui.CityFragment;
+import com.example.mytourguideapp.ui.IslandFragment;
+import com.example.mytourguideapp.ui.MountainFragment;
+import com.example.mytourguideapp.ui.SeasFragment;
+
 
 public class CategoryAdapter extends FragmentStateAdapter {
 
