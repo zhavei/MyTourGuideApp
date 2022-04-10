@@ -1,6 +1,7 @@
 package com.example.mytourguideapp;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBindings;
@@ -24,10 +25,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        viewPager2 = findViewById(R.id.view_pager);
-        tabLayout = findViewById(R.id.tab_layout);
+        viewPager2 = binding.viewPager;
+        tabLayout = binding.tabLayout;
         categoryAdapter = new CategoryAdapter(this);
 
         //set adapter viewpager
