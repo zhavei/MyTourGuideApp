@@ -42,6 +42,7 @@ public class RecycleViewWorldAdapter extends RecyclerView.Adapter<RecycleViewWor
     }
 
 
+    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
